@@ -1,10 +1,12 @@
 package pl.weatherLive.geolocation;
 
 import lombok.Data;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.HttpEntity;
 import org.springframework.http.HttpMethod;
 
 import org.springframework.http.ResponseEntity;
+import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 import pl.weatherLive.geolocation.model.Coordinates;
@@ -18,7 +20,8 @@ import pl.weatherLive.geolocation.model.Result;
 public class GeolocationService {
 
     private final RestTemplate restTemplate = new RestTemplate();
-    private final String apiKey = "90153c22b8dc43acaf160cde358d8c91";
+    @Value("${apiKey}")
+    private String apiKey;
 
     String cityName = "Warszawa";
     String countryName = "Poland";
