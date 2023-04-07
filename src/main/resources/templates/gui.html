@@ -1,0 +1,155 @@
+<!doctype html>
+<html lang="en" xmlns:th="https://www.thymeleaf.org/">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Bootstrap demo</title>
+  <link rel="stylesheet" th:href="@{/css/style.css}" />
+  </head>
+<body>
+<div class = "wrapper">
+  <div class = "header">
+    <h1 class="logo">WeatherLive</h1>
+  </div>
+  <nav id="topnav">
+    <form action="#" th:action="@{/save}" method="post">
+      <ul class="menu">
+        <li>Miasto</li>
+        <li><input type="text" class = "text" id="nameCity" name="nameCity"></li>
+        <li>Kraj</li>
+        <li><input type="text" class = "text" id="nameCountry" name="nameCountry"></li>
+        <li><button type ="submit">Sprawdź pogodę</button></li>
+      </ul>
+    </form>
+  </nav>
+
+  <div class ="container">
+    <div class = "head"><span th:text="${cityName}"></span></div>
+
+    <div class = "panelCaly">
+
+      <div class = "panelik">
+        <div class = "kafelekLewy">Data:</div>
+        <div class = "kafelekLewy">Temp dzień:</div>
+        <div class = "kafelekLewy">Temp noc:</div>
+        <div class = "kafelekLewy">Wiatr:</div>
+        <div class = "kafelekLewy">Opady:</div>
+        <div class = "kafelekLewy">Opady %:</div>
+      </div>
+      <div class = "panelik">
+        <div class = "kafelekLewy"><span th:text="${time0}"></span></div>
+        <div class = "kafelekLewy"><span th:text="${temperatureMax0}"></span>°C</div>
+        <div class = "kafelekLewy"><span th:text="${temperatureMin0}"></span>°C</div>
+        <div class = "kafelekLewy"><span th:text="${wind0}"></span> km/h</div>
+        <div class = "kafelekLewy"><span th:text="${precipitation0}"></span> mm/m²</div>
+        <div class = "kafelekLewy"><span th:text="${precipitationProbability0}"></span> %</div>
+      </div>
+      <div class = "panelik">
+
+      </div>
+    </div>
+
+    <div class = "panelCaly">
+
+      <div class = "panelik">
+        <div class = "kafelekLewy">Data:</div>
+        <div class = "kafelekLewy">Temp dzień:</div>
+        <div class = "kafelekLewy">Temp noc:</div>
+        <div class = "kafelekLewy">Wiatr:</div>
+        <div class = "kafelekLewy">Opady:</div>
+        <div class = "kafelekLewy">Opady %:</div>
+      </div>
+      <div class = "panelik">
+        <div class = "kafelekLewy"><span th:text="${time1}"></span></div>
+        <div class = "kafelekLewy"><span th:text="${temperatureMax1}"></span>°C</div>
+        <div class = "kafelekLewy"><span th:text="${temperatureMin1}"></span>°C</div>
+        <div class = "kafelekLewy"><span th:text="${wind1}"></span> km/h</div>
+        <div class = "kafelekLewy"><span th:text="${precipitation1}"></span> mm/m²</div>
+        <div class = "kafelekLewy"><span th:text="${precipitationProbability1}"></span> %</div>
+      </div>
+      <div class = "panelik">
+
+      </div>
+    </div>
+    <div class = "panelCaly">
+
+      <div class = "panelik">
+        <div class = "kafelekLewy">Data:</div>
+        <div class = "kafelekLewy">Temp dzień:</div>
+        <div class = "kafelekLewy">Temp noc:</div>
+        <div class = "kafelekLewy">Wiatr:</div>
+        <div class = "kafelekLewy">Opady:</div>
+        <div class = "kafelekLewy">Opady %:</div>
+      </div>
+      <div class = "panelik">
+        <div class = "kafelekLewy"><span th:text="${time2}"></span></div>
+        <div class = "kafelekLewy"><span th:text="${temperatureMax2}"></span>°C</div>
+        <div class = "kafelekLewy"><span th:text="${temperatureMin2}"></span>°C</div>
+        <div class = "kafelekLewy"><span th:text="${wind2}"></span> km/h</div>
+        <div class = "kafelekLewy"><span th:text="${precipitation2}"></span> mm/m²</div>
+        <div class = "kafelekLewy"><span th:text="${precipitationProbability2}"></span> %</div>
+      </div>
+      <div class = "panelik">
+
+      </div>
+    </div>
+    <div class = "panelCaly">
+
+      <div class = "panelik">
+        <div class = "kafelekLewy">Data:</div>
+        <div class = "kafelekLewy">Temp dzień:</div>
+        <div class = "kafelekLewy">Temp noc:</div>
+        <div class = "kafelekLewy">Wiatr:</div>
+        <div class = "kafelekLewy">Opady:</div>
+        <div class = "kafelekLewy">Opady %:</div>
+      </div>
+      <div class = "panelik">
+        <div class = "kafelekLewy"><span th:text="${time3}"></span></div>
+        <div class = "kafelekLewy"><span th:text="${temperatureMax3}"></span>°C</div>
+        <div class = "kafelekLewy"><span th:text="${temperatureMin3}"></span>°C</div>
+        <div class = "kafelekLewy"><span th:text="${wind3}"></span> km/h</div>
+        <div class = "kafelekLewy"><span th:text="${precipitation3}"></span> mm/m²</div>
+        <div class = "kafelekLewy"><span th:text="${precipitationProbability3}"></span> %</div>
+      </div>
+      <div class = "panelik">
+
+      </div>
+    </div>
+    <div class = "panelCaly">
+
+      <div class = "panelik">
+        <div class = "kafelekLewy">Data:</div>
+        <div class = "kafelekLewy">Temp dzień:</div>
+        <div class = "kafelekLewy">Temp noc:</div>
+        <div class = "kafelekLewy">Wiatr:</div>
+        <div class = "kafelekLewy">Opady:</div>
+        <div class = "kafelekLewy">Opady %:</div>
+      </div>
+      <div class = "panelik">
+        <div class = "kafelekLewy"><span th:text="${time4}"></span></div>
+        <div class = "kafelekLewy"><span th:text="${temperatureMax4}"></span>°C</div>
+        <div class = "kafelekLewy"><span th:text="${temperatureMin4}"></span>°C</div>
+        <div class = "kafelekLewy"><span th:text="${wind4}"></span> km/h</div>
+        <div class = "kafelekLewy"><span th:text="${precipitation4}"></span> mm/m²</div>
+        <div class = "kafelekLewy"><span th:text="${precipitationProbability4}"></span> %</div>
+      </div>
+      <div class = "panelik">
+
+      </div>
+    </div>
+  </div>
+
+</div>
+
+
+<footer>
+  <div class="info">
+    <h2>Made by Schodowski</h2>
+    Wszelkie prawa zastrzeżone &copy; 2017 Dziękuję za wizytę!
+  </div>
+</footer>
+
+</div>
+
+</body>
+</html>
