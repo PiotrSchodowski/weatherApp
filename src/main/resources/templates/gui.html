@@ -38,14 +38,17 @@
       </div>
       <div class = "panelik">
         <div class = "kafelekLewy"><span th:text="${time0}"></span></div>
-        <div class = "kafelekLewy"><span th:text="${temperatureMax0}"></span>°C</div>
+        <div class = "kafelekLewy" id = "tempMax"><span th:text="${temperatureMax0}"></span>°C</div>
         <div class = "kafelekLewy"><span th:text="${temperatureMin0}"></span>°C</div>
         <div class = "kafelekLewy"><span th:text="${wind0}"></span> km/h</div>
         <div class = "kafelekLewy"><span th:text="${precipitation0}"></span> mm/m²</div>
         <div class = "kafelekLewy"><span th:text="${precipitationProbability0}"></span> %</div>
       </div>
       <div class = "panelik">
-
+        <img th:if="${precipitationProbability0 < 10}" th:src="@{/sun.png}" alt="Sun" />
+        <img th:if="${precipitationProbability0 >= 10 and precipitationProbability0 < 40}" th:src="@{/sunCloud.png}" alt="SunCloud" />
+        <img th:if="${precipitationProbability0 >= 40 and precipitationProbability0 < 80}" th:src="@{/cloud.png}" alt="Cloud" />
+        <img th:if="${precipitationProbability0 >= 80}" th:src="@{/rain.png}" alt="Rain" />
       </div>
     </div>
 
@@ -61,14 +64,17 @@
       </div>
       <div class = "panelik">
         <div class = "kafelekLewy"><span th:text="${time1}"></span></div>
-        <div class = "kafelekLewy"><span th:text="${temperatureMax1}"></span>°C</div>
+        <div class = "kafelekLewy" id = "tempMax1"><span th:text="${temperatureMax1}"></span>°C</div>
         <div class = "kafelekLewy"><span th:text="${temperatureMin1}"></span>°C</div>
         <div class = "kafelekLewy"><span th:text="${wind1}"></span> km/h</div>
         <div class = "kafelekLewy"><span th:text="${precipitation1}"></span> mm/m²</div>
         <div class = "kafelekLewy"><span th:text="${precipitationProbability1}"></span> %</div>
       </div>
       <div class = "panelik">
-
+        <img th:if="${precipitationProbability1 < 10}" th:src="@{/sun.png}" alt="Sun" />
+        <img th:if="${precipitationProbability1 >= 10 and precipitationProbability1 < 40}" th:src="@{/sunCloud.png}" alt="SunCloud" />
+        <img th:if="${precipitationProbability1 >= 40 and precipitationProbability1 < 80}" th:src="@{/cloud.png}" alt="Cloud" />
+        <img th:if="${precipitationProbability1 >= 80}" th:src="@{/rain.png}" alt="Rain" />
       </div>
     </div>
     <div class = "panelCaly">
@@ -83,14 +89,17 @@
       </div>
       <div class = "panelik">
         <div class = "kafelekLewy"><span th:text="${time2}"></span></div>
-        <div class = "kafelekLewy"><span th:text="${temperatureMax2}"></span>°C</div>
+        <div class = "kafelekLewy" id = "tempMax2"><span th:text="${temperatureMax2}"></span>°C</div>
         <div class = "kafelekLewy"><span th:text="${temperatureMin2}"></span>°C</div>
         <div class = "kafelekLewy"><span th:text="${wind2}"></span> km/h</div>
         <div class = "kafelekLewy"><span th:text="${precipitation2}"></span> mm/m²</div>
         <div class = "kafelekLewy"><span th:text="${precipitationProbability2}"></span> %</div>
       </div>
       <div class = "panelik">
-
+        <img th:if="${precipitationProbability2 < 10}" th:src="@{/sun.png}" alt="Sun" />
+        <img th:if="${precipitationProbability2 >= 10 and precipitationProbability2 < 40}" th:src="@{/sunCloud.png}" alt="SunCloud" />
+        <img th:if="${precipitationProbability2 >= 40 and precipitationProbability2 < 80}" th:src="@{/cloud.png}" alt="Cloud" />
+        <img th:if="${precipitationProbability2 >= 80}" th:src="@{/rain.png}" alt="Rain" />
       </div>
     </div>
     <div class = "panelCaly">
@@ -105,14 +114,17 @@
       </div>
       <div class = "panelik">
         <div class = "kafelekLewy"><span th:text="${time3}"></span></div>
-        <div class = "kafelekLewy"><span th:text="${temperatureMax3}"></span>°C</div>
+        <div class = "kafelekLewy" id = "tempMax3"><span th:text="${temperatureMax3}"></span>°C</div>
         <div class = "kafelekLewy"><span th:text="${temperatureMin3}"></span>°C</div>
         <div class = "kafelekLewy"><span th:text="${wind3}"></span> km/h</div>
         <div class = "kafelekLewy"><span th:text="${precipitation3}"></span> mm/m²</div>
         <div class = "kafelekLewy"><span th:text="${precipitationProbability3}"></span> %</div>
       </div>
       <div class = "panelik">
-
+        <img th:if="${precipitationProbability3 < 10}" th:src="@{/sun.png}" alt="Sun" />
+        <img th:if="${precipitationProbability3 >= 10 and precipitationProbability3 < 40}" th:src="@{/sunCloud.png}" alt="SunCloud" />
+        <img th:if="${precipitationProbability3 >= 40 and precipitationProbability3 < 80}" th:src="@{/cloud.png}" alt="Cloud" />
+        <img th:if="${precipitationProbability3 >= 80}" th:src="@{/rain.png}" alt="Rain" />
       </div>
     </div>
     <div class = "panelCaly">
@@ -127,14 +139,17 @@
       </div>
       <div class = "panelik">
         <div class = "kafelekLewy"><span th:text="${time4}"></span></div>
-        <div class = "kafelekLewy"><span th:text="${temperatureMax4}"></span>°C</div>
+        <div class = "kafelekLewy" id = "tempMax4"><span th:text="${temperatureMax4}"></span>°C</div>
         <div class = "kafelekLewy"><span th:text="${temperatureMin4}"></span>°C</div>
         <div class = "kafelekLewy"><span th:text="${wind4}"></span> km/h</div>
         <div class = "kafelekLewy"><span th:text="${precipitation4}"></span> mm/m²</div>
         <div class = "kafelekLewy"><span th:text="${precipitationProbability4}"></span> %</div>
       </div>
       <div class = "panelik">
-
+        <img th:if="${precipitationProbability4 < 10}" th:src="@{/sun.png}" alt="Sun" />
+        <img th:if="${precipitationProbability4 >= 10 and precipitationProbability4 < 40}" th:src="@{/sunCloud.png}" alt="SunCloud" />
+        <img th:if="${precipitationProbability4 >= 40 and precipitationProbability4 < 80}" th:src="@{/cloud.png}" alt="Cloud" />
+        <img th:if="${precipitationProbability4 >= 80}" th:src="@{/rain.png}" alt="Rain" />
       </div>
     </div>
   </div>

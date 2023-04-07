@@ -37,7 +37,7 @@ public class ControllerV1 {
             String time = weatherData.getDaily().getTime().get(i).toString();
             String wind = weatherData.getDaily().getWindspeed_10m_max().get(i).toString();
             String precipitation = weatherData.getDaily().getPrecipitation_sum().get(i).toString();
-            String precipitationProbability = weatherData.getDaily().getPrecipitation_probability_mean().get(i).toString();
+            Double precipitationProbability = weatherData.getDaily().getPrecipitation_probability_mean().get(i);
 
 
             model.addAttribute("temperatureMax"+i, temperatureMax);
@@ -56,6 +56,4 @@ public class ControllerV1 {
         geolocationService.setCountryName(nameCountry);
         return "redirect:/";
     }
-
-
 }
