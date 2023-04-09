@@ -10,6 +10,12 @@ import pl.weatherLive.geolocation.GeolocationService;
 import pl.weatherLive.weather.WeatherService;
 import pl.weatherLive.weather.model.Root;
 
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
+import java.time.format.FormatStyle;
+import java.time.format.TextStyle;
+import java.util.Locale;
+
 
 @Controller
 public class ControllerV1 {
@@ -34,7 +40,11 @@ public class ControllerV1 {
 
             String temperatureMax = weatherData.getDaily().getTemperature_2m_max().get(i).toString();
             String temperatureMin = weatherData.getDaily().getTemperature_2m_min().get(i).toString();
-            String time = weatherData.getDaily().getTime().get(i).toString();
+
+            LocalDate date = LocalDate.parse(weatherData.getDaily().getTime().get(i));
+            String dayOfWeek = date.getDayOfWeek().getDisplayName(TextStyle.SHORT, Locale.getDefault());
+            String time =  dayOfWeek + " " + date;
+
             String wind = weatherData.getDaily().getWindspeed_10m_max().get(i).toString();
             String precipitation = weatherData.getDaily().getPrecipitation_sum().get(i).toString();
             Double precipitationProbability = weatherData.getDaily().getPrecipitation_probability_mean().get(i);

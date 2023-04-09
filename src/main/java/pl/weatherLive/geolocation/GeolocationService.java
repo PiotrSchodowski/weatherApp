@@ -4,15 +4,16 @@ import lombok.Data;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.HttpEntity;
 import org.springframework.http.HttpMethod;
-
 import org.springframework.http.ResponseEntity;
-import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 import pl.weatherLive.geolocation.model.Coordinates;
 import pl.weatherLive.geolocation.model.GeocodeResponse;
 import pl.weatherLive.geolocation.model.Geometry;
 import pl.weatherLive.geolocation.model.Result;
+
+import java.util.List;
+import java.util.Optional;
 
 
 @Data
@@ -31,16 +32,32 @@ public class GeolocationService {
 
         String url = "https://api.opencagedata.com/geocode/v1/json?q="+ cityName + "%2C+" + countryName + "&key=" + apiKey + "&no_annotations=1";
 
-        ResponseEntity<GeocodeResponse> responseEntity = restTemplate.exchange(url, HttpMethod.GET, HttpEntity.EMPTY,GeocodeResponse.class);
+        try {
+            ResponseEntity<GeocodeResponse> responseEntity = restTemplate.exchange(url, HttpMethod.GET, HttpEntity.EMPTY, GeocodeResponse.class);
+            Optional<GeocodeResponse> responseOptional = Optional.ofNullable(responseEntity.getBody());
 
-        GeocodeResponse response = responseEntity.getBody();
-        if (response != null && response.getResults() != null && response.getResults().size() > 0) {
-            Result result = response.getResults().get(0);
-            Geometry geometry = result.getGeometry();
+            List<Result> results = responseOptional.get().getResults();
 
-            return new Coordinates(geometry.getLat(), geometry.getLng());
+            if(results != null && !results.isEmpty()){
+
+                Result result = results.get(0);
+                Geometry geometry = result.getGeometry();
+
+                return new Coordinates(geometry.getLat(), geometry.getLng());
+
+            }else{
+                setCountryName("Poland");
+                setCityName("Warszawa");
+                return new Coordinates(52.2297, 21.0122);
+            }
+
+        } catch (Exception e) {
+            System.err.println("Błąd podczas wywoływania API: " + e.getMessage());
+            setCityName("Warszawa");
+            setCountryName("Poland");
+            return new Coordinates(52.2297, 21.0122); // domyślne wartości dla Warszawy
         }
-        return null;
+
     }
 
     public void setCityName(String cityName) {

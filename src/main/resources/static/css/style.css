@@ -22,7 +22,7 @@ h1.logo
 	margin-top: 30px;
 	margin-bottom: 25px;
 }
-#topnav
+#header
 {
 	background-color: #222930;
 	text-align: center;
@@ -89,7 +89,7 @@ button:hover {
     background-color: #ebebeb;
     height: 1200px;
 }
-.head{
+.cityName{
     min-height: 60px;
     color: #0a2b42;
     font-weight:200;
@@ -99,7 +99,7 @@ button:hover {
     padding-top: 25px;
     text-shadow: #666 ;
 }
-.panelCaly{
+.panel{
     margin-left: auto;
 	margin-right: auto;
     width: 800px;
@@ -109,12 +109,12 @@ button:hover {
     margin-bottom: 30px;
     box-shadow: 3px 3px 6px #ccc;
 }
-.panelik{
+.tile{
     float: left;
     margin-bottom:3px;
     margin-top:15px;
 }
-.kafelekLewy{
+.line{
     width: 200px;
     background-color:#fff;
     font-size: 17px;
