@@ -46,15 +46,15 @@ public class GeolocationService {
                 return new Coordinates(geometry.getLat(), geometry.getLng());
 
             }else{
-                setCountryName("Poland");
-                setCityName("Warszawa");
+                setCountryName("");
+                setCityName("Error, try again !");
                 return new Coordinates(52.2297, 21.0122);
             }
 
         } catch (Exception e) {
             System.err.println("Błąd podczas wywoływania API: " + e.getMessage());
-            setCityName("Warszawa");
-            setCountryName("Poland");
+            setCityName("Bad response from API");
+            setCountryName("");
             return new Coordinates(52.2297, 21.0122); // domyślne wartości dla Warszawy
         }
 
