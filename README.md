@@ -2,11 +2,12 @@ WeatherLive
 
 About:
 This application shows the weather for 5 days based on the city that the user enters in the frontend.
+Unfortunately, the API I am using occasionally returns coordinates for cities that do not exist. I will change the server in the future.
 
 Technologies:
 java Spring-boot(backend), thymeleaf(frontend)
 
-Properties
+Properties:
 apiKey=your_api_key 
 
 How to run ?
