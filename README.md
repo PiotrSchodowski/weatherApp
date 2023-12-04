@@ -14,6 +14,7 @@ Unfortunately, the API I am using occasionally returns coordinates for cities th
 ## Technologies
 * Java 17
 * Spring Boot 2.7
+* Thymeleaf
 * Maven
 * RestClient
 
