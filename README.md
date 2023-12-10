@@ -19,17 +19,28 @@ Unfortunately, the API I am using occasionally returns coordinates for cities th
 * RestClient
 
 ## Properties:
-apiKey=your_api_key 
+apiKey=your_api_key (paste form api.opencagedata.com)
 
 ## Setup
 How to run ?
-To run need ApiKey form api.opencagedata.com (it's a service name) Need only to create account and generate ApiKey. 
+To run need ApiKey form api.opencagedata.com (it's a service name) Need only to create account and generate ApiKey(free to 2000 request). 
 
 With set properties, just run app.
 
 ## How it works
-1. Enter city name nad country, in basic it's Poland and Warsaw
+1. When you run this program, you will show Poland and Warsaw because this is the default city.
+
 ![img_1.png](img_1.png)
+
+2. You can change the city and country by entering the name of the city and country in the form and clicking the "Check" button.
+
 ![img_2.png](img_2.png)
+
+3. You have information about the weather for each bigger city on the world.
+
 ![img_3.png](img_3.png)
-2. Check the weather for the next 5 days; we have information about temperature, wind, and precipitation for every city in the world.
+4. Check the weather for the next 5 days; we have information about temperature, wind and precipitation. 
+
+
+
+That's all. Thanks for your attention.
